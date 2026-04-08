@@ -30,10 +30,10 @@ A statically generated blog built with **Jaspr** (Dart), **jaspr_content** (mark
 - ✅ Phase 2c & 2d — URL routing and multi-filter OR logic
 
 ### In Progress
-- 🔄 Phase 2 multi-select dropdowns (checkboxes on all three dropdowns)
 
 ### Planned
 - 📋 Search functionality
+- 📋 Phase 2 multi-select dropdowns (checkboxes on all three dropdowns)
 - 📋 Comments display (from `content/comments.json`)
 - 📋 Firebase Hosting deployment + GitHub Actions CI/CD
 
@@ -67,7 +67,7 @@ jaspr serve
 ### Build for Production
 
 ```bash
-jaspr build --target static
+jaspr build
 # Output: build/jaspr/
 ```
 
