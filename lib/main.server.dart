@@ -23,8 +23,8 @@ import 'package:tmtdslt/layout/flexible_layout/constants.dart';
 // Import FlexibleLayout for testing
 import 'package:tmtdslt/layout/flexible_layout/flex_layout.dart';
 import 'package:tmtdslt/layout/flexible_layout/flex_layout_config.dart';
-import 'package:tmtdslt/layout/flexible_layout/flex_theme.dart';
 import 'package:tmtdslt/layout/flexible_layout/loaders/filtered_filesystem_loader.dart';
+import 'package:tmtdslt/layout/flexible_layout/theme/flex_theme.dart';
 
 // This file is generated automatically by Jaspr, do not remove or edit.
 import 'main.server.options.dart';
