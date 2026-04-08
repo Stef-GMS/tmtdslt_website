@@ -30,6 +30,7 @@ A statically generated blog built with **Jaspr** (Dart), **jaspr_content** (mark
 - ✅ Phase 2c & 2d — URL routing and multi-filter OR logic
 
 ### In Progress
+- 🔄 Deploy to web
 
 ### Planned
 - 📋 Search functionality
