@@ -1,4 +1,4 @@
-import 'package:tmtdslt/layout/flexible_layout/flex_theme.dart';
+import 'package:tmtdslt/layout/flexible_layout/theme/flex_theme.dart';
 
 /// CSS styles for FlexibleLayout
 ///

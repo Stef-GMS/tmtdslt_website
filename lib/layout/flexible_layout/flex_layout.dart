@@ -5,8 +5,8 @@ import 'package:tmtdslt/layout/flexible_layout/components/main_content.dart';
 import 'package:tmtdslt/layout/flexible_layout/components/main_footer.dart';
 import 'package:tmtdslt/layout/flexible_layout/components/main_header.dart';
 import 'package:tmtdslt/layout/flexible_layout/flex_layout_config.dart';
-import 'package:tmtdslt/layout/flexible_layout/flex_layout_styles.dart';
-import 'package:tmtdslt/layout/flexible_layout/flex_theme.dart';
+import 'package:tmtdslt/layout/flexible_layout/theme/flex_layout_styles.dart';
+import 'package:tmtdslt/layout/flexible_layout/theme/flex_theme.dart';
 
 /// FlexibleLayout - A flexible, customizable layout for jaspr_content
 ///
