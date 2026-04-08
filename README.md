@@ -201,6 +201,122 @@ content/
 ```
 
 ---
+# lib/ Architecture
+
+```mermaid
+flowchart TD
+    subgraph entry["Entry Points"]
+        SERVER["main.server.dart\n(SSG pre-render)"]
+        CLIENT["main.client.dart\n(client hydration)"]
+    end
+
+    subgraph loading["Content Loading"]
+        FFL["FilteredFilesystemLoader\n(.md files only)"]
+        AM["AssetManager\n(images)"]
+    end
+
+    subgraph content["content/  (Git)"]
+        direction LR
+        POSTS["posts/"]
+        TAGS["tag/"]
+        CATS["category/"]
+        PAGES["pages/ · page/"]
+        IMGS["images/"]
+    end
+
+    subgraph app["jaspr_content"]
+        CA["ContentApp.custom"]
+    end
+
+    subgraph layout["FlexibleLayout"]
+        FL["FlexibleLayout\n(PageLayoutBase)"]
+        FLC["FlexLayoutConfig"]
+        FLT["FlexTheme\nFlexLayoutStyles"]
+        MH["MainHeader\n+ TopMenu"]
+        MC["MainContent"]
+        MFT["MainFooter"]
+    end
+
+    subgraph maincontent["MainContent renders"]
+        PH["PostHeader"]
+        PF["PostFooter"]
+        PC["PostCategories"]
+        PT["PostTags"]
+        PN["PostNavigation"]
+    end
+
+    subgraph sidebar["Sidebar"]
+        SB["Sidebar"]
+        SW["SidebarWidget\n(wrapper)"]
+        RP["RecentPosts"]
+        DBA["DropdownButton\n(Archives)"]
+        DBC["DropdownButton\n(Categories)"]
+        DBT["DropdownButton\n(Tags)"]
+        TC["TagCloud"]
+    end
+
+    subgraph pagecomps["Page Components (CustomComponent)"]
+        HP["HomePage"]
+        AP["ArchivePage"]
+        CP["CategoryPage"]
+        TP["TagPage"]
+        IE["ImageExtended"]
+    end
+
+    subgraph homeinternals["HomePage internals"]
+        PG["PostsGrid"]
+        PAG["Pagination"]
+    end
+
+    subgraph staticpages["pages/"]
+        CUP["ContactUsPage"]
+        PP["PrivacyPage"]
+        NFP["NotFoundPage"]
+    end
+
+    subgraph utils["utils/"]
+        PSF["PostsFilter"]
+        TCU["TagCounter"]
+    end
+
+    subgraph models["models/"]
+        DT["DropdownType"]
+        DI["DropdownItem"]
+        TD["TagData"]
+    end
+
+    SERVER --> CA
+    CLIENT --> CA
+    SERVER --> FFL
+    SERVER --> AM
+
+    FFL -->|"reads .md"| POSTS & TAGS & CATS & PAGES
+    AM -->|serves| IMGS
+
+    CA --> FL
+    CA --> HP & AP & CP & TP & IE
+    CA --> CUP & PP & NFP
+
+    FLC --> FL
+    FLT --> FL
+    FL --> MH & MC & MFT
+
+    MC --> PH & PF & PN & SB
+    PF --> PC & PT
+
+    SB --> SW
+    SW --> RP & DBA & DBC & DBT & TC
+
+    DBA & DBC & DBT --> DT & DI
+    TC --> TCU & TD
+
+    HP --> PSF & PG & PAG
+    AP & CP & TP --> PSF
+    TC --> PSF
+
+    PSF -->|"reads all pages"| POSTS
+```
+---
 
 ## 🔄 Migration Scripts (`bin/`)
 
