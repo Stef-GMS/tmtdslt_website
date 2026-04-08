@@ -1,0 +1,4 @@
+# Include .gitignore excluded files with ! prefix
+!node_modules
+
+# Exclude other files with .gitignore syntax
