@@ -10,7 +10,9 @@ image: /images/2019/2019-06/2019-06-16-work-life-balance-yeah-right-featured.jpe
 published: true
 ---
 _I can’t believe it has been 5½ years since I was faithfully writing blog posts. Where does the time go?!_  
-![Bitmoji-Hi-2019-06-16-12-51.jpeg](/images/2019/2019-06/2019-06-16-work-life-balance-yeah-right-img-1.jpeg)  
+
+<img src="/images/2019/2019-06/2019-06-16-work-life-balance-yeah-right-img-1.jpeg" style="float: right;">
+
 Where have I been? Trying to survive. I let my day job consume most of my spare time. Whenever I could, which was nearly non-existent, I spent time learning how to create iPhone apps. Technology changes so fast that sometimes I felt like I was drowning in work.
 
 I miss blogging, but when all I do is work, there’s not really a lot to write about. My day job consists of writing database code (programming), creating reports, performing data analysis, mentoring teammates, and covering for my supervisor when she’s out of the office. Don’t get me wrong; I love what I do, but I just need to get my work/life balance back to an even balance.
